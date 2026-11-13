@@ -29,8 +29,8 @@ begin
     end if;
 
     d := (k_r - 1) * (k_c - 1);
-    p := claude_workspace.chi_square_sf(x, d);
-    crit := claude_workspace.chi_square_critical(alpha::double precision, d);
+    p := public.chi_square_sf(x, d);
+    crit := public.chi_square_critical(alpha::double precision, d);
 
     if under5 > 0 then
         raise notice '% cell(s) have an expected count under 5; the chi-square approximation is shaky there.', under5;
